@@ -60,8 +60,8 @@ print({'Good', 'Evening', 'My', 'Lord'}) # Set
 print({'Name': 'Gökhan', 'Surname': 'Arman', 'Country' : 'Turkey', 'Age': 33})  #Dictionary
 
 # Find an Euclidian distance between (2, 3) and (10, 8)
-euclidianDistance = (((2 - 3) ** 2)) + ((10 - 8) ** 2)
-print(euclidianDistance)
+euclidian_distance = (((2 - 3) ** 2)) + ((10 - 8) ** 2)
+print(euclidian_distance)
 
 
 
