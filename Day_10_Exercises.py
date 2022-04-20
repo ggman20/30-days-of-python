@@ -83,13 +83,24 @@ print(countries_with_land)
 
 # 2. This is a fruit list, ['banana', 'orange', 'mango', 'lemon'] reverse the order using loop.
 fruits = ['banana', 'orange', 'mango', 'lemon']
-for i in range(len(fruits))
-    temp = fruit[i]
+import math
+n = math.floor(len(fruits)/2)
+last_index = len(fruits) - 1
+for i in range(n):
+    temp = fruits[i]
+    fruits[i] = fruits[last_index - i]
+    fruits[last_index - i] = temp
+print(fruits) 
     
-
 # 3. Go to the data folder and use the countries_data.py file.
-
+import countries_data
+data_of_countries = countries_data.data
+print(data_of_countries)
 # 3A.What are the total number of languages in the data
+for i in range(len(data_of_countries)):
+    print(data_of_countries[i]['languages'])
+
+
 
 # 3B.Find the ten most spoken languages from the data
 
