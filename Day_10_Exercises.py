@@ -97,13 +97,76 @@ import countries_data
 data_of_countries = countries_data.data
 print(data_of_countries)
 # 3A.What are the total number of languages in the data
+languages_all_array = []
+lang_str = ""
 for i in range(len(data_of_countries)):
-    print(data_of_countries[i]['languages'])
+    lang_arr = data_of_countries[i]['languages']
+    languages_all_array.append(lang_arr)
+      
+print(languages_all_array) 
 
-
+for k in range(len(languages_all_array)):    
+    for j in range(len(languages_all_array[k])):
+        if (lang_str.__contains__(languages_all_array[k][j]) == False):
+            # listToStr = ' '.join(map(str, languages_all_array[k]))
+            lang_str += languages_all_array[k][j] + ','
+            
+print("lang_str",lang_str)
+lang_arr = list(lang_str.split(','))
+print(lang_arr)
+new_lang_arr = []
+for i in range(len(lang_arr)):
+    if(lang_arr[i].__contains__('modern') == False):
+        new_lang_arr.append(lang_arr[i])
+new_lang_arr.pop()   
+print("new_lang", new_lang_arr)
+print("The total number of languages:", len(new_lang_arr))
 
 # 3B.Find the ten most spoken languages from the data
+all_langs_str = ""
+for k in range(len(languages_all_array)):    
+    for j in range(len(languages_all_array[k])):
+        all_langs_str += languages_all_array[k][j] + ','
+print(all_langs_str)
+
+counted_arr = []
+for i in range(len(new_lang_arr)):
+    counted = all_langs_str.count(new_lang_arr[i])
+    counted_arr.append(counted)
+    
+print(counted_arr)
+most_spoken_langs = []
+for i in range(len(counted_arr)):
+    if(counted_arr[i] > 4):
+       most_spoken_langs.append(new_lang_arr[i])
+       
+print("Ten most spoken languages:",most_spoken_langs)
 
 # 3C.Find the 10 most populated countries in the world
+population_arr = []
+name_arr = []
+for i in range(len(data_of_countries)):   
+    population_arr.append(data_of_countries[i]["population"])
+    name_arr.append(data_of_countries[i]["name"])
+print(name_arr)
+print(population_arr)
+final_list = []
+most_pop_country_list = []
+for i in range(10): 
+    max1 = 0   
+          
+    for j in range(len(population_arr)):     
+        if population_arr[j] > max1:
+            max1 = population_arr[j];
+            index = j
+            
+    population_arr.remove(max1);
+    final_list.append(max1)
+    most_pop_country_list.append(data_of_countries[index]['name'])
+          
+print(final_list) #[1377422166, 1295210000, 323947000, 258705000, 206135893, 194125062, 186988000, 161006790, 146599183, 126960000]
+print(most_pop_country_list) #['China', 'Iceland', 'United Arab Emirates', 'Iceland', 'Brazil', "Korea (Democratic People's Republic of)", 'New Caledonia', 'Bangladesh', 'Poland', 'Ireland']
+
+    
 
 
