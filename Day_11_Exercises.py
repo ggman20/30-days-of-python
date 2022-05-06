@@ -258,22 +258,43 @@ def calculate_variance(liste):
     variance = temp_value / len(liste)
     return variance
 print(calculate_variance([4, 8, 6, 5, 3, 2, 8, 9, 2, 5]))
+import math
 def calculate_std(liste):
-    pass
+    variance = calculate_variance(liste)
+    std = math.sqrt(variance)
+    return std
 
-
+print(calculate_std([4, 8, 6, 5, 3, 2, 8, 9, 2, 5]))
 
 #%% LEVEL - 3
 # 1. Write a function called is_prime, which checks if a number is prime.
+def is_prime(number):
+    count = 0
+    
+    for i in range(1,number):
+        if number % i != 0:
+            count = count + 1
+    print(count)     
+    if count == (number - 2):
+        print('{} is a prime number '.format(number))
+    else:
+        print('{} is not a prime number'.format(number))
 
-
+is_prime(32)        
 # 2. Write a functions which checks if all items are unique in the list.
-
+def is_unique(liste):
+    
+        
+        
+    
 
 # 3. Write a function which checks if all the items of the list are of the same data type.
+def is_same_data_type(liste):
+    
 
 
 # 4. Write a function which check if provided variable is a valid python variable
+
 
 
 # 5. Go to the data folder and access the countries-data.py file.
@@ -283,3 +304,14 @@ def calculate_std(liste):
 
 
 # 5B. Create a function called the most_populated_countries. It should return 10 or 20 most populated countries in descending order.
+
+
+
+
+
+
+
+
+
+
+
