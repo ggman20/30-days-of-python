@@ -5,7 +5,7 @@ Created on Sat Apr 16 14:09:07 2022
 @author: ARMAN
 """
 
-countries = [
+countriesall = [
   'Afghanistan',
   'Albania',
   'Algeria',
